@@ -1,63 +1,49 @@
+body {
+  font-size: 16px;
+  font-family: "Archivo Narrow", sans-serif;
+  text-align: center;
+}
+
 .hide {
   display: none;
 }
 
-body {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  font-size: 16px;
-  font-family: "Roboto", sans-serif;
-  text-align: center;
-  background-color: #daeffb;
-}
-
-.main {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 1em;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 h1 {
-  width: 100%;
-  text-align: center;
-  font-family: "Montserrat";
+  padding: 0.5em;
+  font-size: 2.5em;
+  font-family: "Julius Sans One", sans-serif;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+  border-radius: 50%;
+  border: 3px solid steelblue;
 }
 
-button {
-  margin: 1.5em auto;
-  padding: 20px;
-  border-radius: 40px;
-  background-color: royalblue;
-  color: #fff;
-  border: none;
-  font-size: 16px;
-  font-family: "Montserrat";
+.random-peeps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.random-peeps div {
+  flex-basis: 250px;
+  text-align: center;
+  padding: 0.5em;
+  border: 1px solid steelblue;
+  background-color: #c6f6f6;
+  margin: 1em;
+  -webkit-box-shadow: 5px 5px 8px 5px rgba(0, 0, 0, 0.377);
+  box-shadow: 5px 5px 18px 5px rgba(0, 0, 0, 0.377);
+}
+.num-users label {
+  font-size: 1.25em;
+}
+
+#users {
+  margin: 0 0.75em;
+  padding: 0.5em;
+  color: steelblue;
   font-weight: bold;
-}
-
-button:hover {
-  margin: 1.5em auto;
-  padding: 20px;
-  border-radius: 40px;
-  background-color: rgb(44, 77, 179);
-  color: #fff;
-  border: none;
-  font-size: 16px;
-  font-family: "Montserrat";
-  font-weight: bold;
-  cursor: pointer;
-}
-
-figure {
-  max-width: 1000px;
-  margin: 0 auto;
+  font-size: 1em;
+  font-family: "Archivo Narrow", sans-serif;
 }

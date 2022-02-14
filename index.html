@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <title>Image Generator</title>
+    <title>Practice-01-starter</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/main.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto&display=swap"
-      rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Julius+Sans+One&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.css" />
     <script src="js/script.js" defer></script>
   </head>
 
   <body>
     <div class="main">
-      <h1>Image Generator!</h1>
-      <div class="image-container hide">
-        <h3>Image by: <span class="author"></span></h3>
-        <figure>
-          <img class="img" />
-        </figure>
+      <h1>Random User Generator!</h1>
+      <div class="num-users">
+        <label for="users">How many users would you like?</label>
+        <select name="users" id="users">
+          <option value="1">1</option>
+          <option value="3">3</option>
+          <option value="5">5</option>
+        </select>
       </div>
-      <button>Show me an image!</button>
+      <div class="random-peeps"></div>
     </div>
   </body>
-
 </html>

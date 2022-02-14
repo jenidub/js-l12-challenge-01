@@ -1,29 +1,36 @@
-const button = document.querySelector("button");
-const authorSpan = document.querySelector(".author");
-const imgDiv = document.querySelector(".image-container");
-const img = document.querySelector(".img");
+const randomFolks = document.querySelector(".random-peeps");
+const selectUserNumber = document.querySelector("#users");
 
-const getImage = async function () {
-    const res = await fetch ('https://picsum.photos/v2/list?limit=100');
-    let images = await res.json();
-    selectRandomImage(images);
-}
+const getData = async function (numUsers) {
+    const usersRequest = await fetch(`https://randomuser.me/api/?results=${numUsers}`);
+    let data = await usersRequest.json();
+    let userResults = data.results;
+    displayUsers(userResults);
+};
 
-const selectRandomImage = function(images) {
-    let randomIndex = Math.floor(Math.random() * images.length);
-    let randomImage = images[randomIndex];
-    console.log(randomImage);
-    displayImage(randomImage);
-}
+const displayUsers = function (arr) {
+    randomFolks.innerHTML = "";
+    for (let user of arr) {
+        console.log(user);
+        console.log("***");
+        let country = user.location.country;
+        let name = user.name.first;
+        let imageURL = user.picture.medium;
+    
+        let userDiv = document.createElement("div");
+        userDiv.innerHTML = `
+            <h3>${name}</h3>
+            <p>${country}</p>
+            <img src=${imageURL} alt="User ${name} profile avatar" />
+        `;
 
-const displayImage = function(obj) {
-    const author = obj.author;
-    const imageAddress = obj["download_url"];
-    authorSpan.innerText = author;
-    img.src = imageAddress;
-    imgDiv.classList.remove("hide");
-}
+        randomFolks.append(userDiv);
+    };
+};
 
-button.addEventListener("click", function() {
-    getImage();
-});
+
+selectUserNumber.addEventListener("change", function(e) {
+    let numUsers = e.target.value;
+    console.log(numUsers);
+    getData(numUsers);
+})
